@@ -1,9 +1,9 @@
 === GutenBee - Gutenberg Blocks ===
-Contributors: cssigniterteam, silencerius, nvourva, tsiger, anastis
+Contributors: cssigniterteam, silencerius, tsiger, anastis
 Tags: gutenberg, blocks
 Requires at least: 6.4
-Tested up to: 6.6
-Stable tag: 2.18.0
+Tested up to: 6.8
+Stable tag: 2.19.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licen2ses/gpl-2.0.html
 Requires PHP: 7.0
@@ -77,7 +77,25 @@ Note that if you want to use the Google Maps block you will also need a Google M
 6. Over a hundred icons to choose from with more being added regularly.
 7. Tabs or Accordions, group your content the way you want.
 
+== Frequently Asked Questions ==
+= Where do I report security bugs found in this plugin? =
+Please report security bugs found in the source code of the GutenBee plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/8a647308-ead3-4797-9190-671ddae30dfa). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 == Changelog ==
+
+= 2.19.1 =
+* Fixed regression where the Slideshow block would break on the frontend due to dep upgrade (Slick) in 2.19.0
+
+= 2.19.0 =
+* Improve sanitization by using DOMPurify.
+* Updated development dependencies.
+* Removed unneeded polyfills.
+* Browser support as per @wordpress/browserslist-config
+
+= 2.18.1 =
+* Mitigated Authenticated Stored XSS issue (CVE-2025-8566, props zer0gh0st).
+* Removed call to load_plugin_textdomain().
+* Fixed Plugin Check (PCP) issues.
 
 = 2.18.0 =
 * WP 6.6 / React 19 update.
