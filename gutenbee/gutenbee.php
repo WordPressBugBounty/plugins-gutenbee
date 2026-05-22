@@ -6,7 +6,7 @@
  * Author: The CSSIgniter Team
  * Author URI: https://www.cssigniter.com
  * License: GPLv2 or later
- * Version: 2.20.1
+ * Version: 2.20.2
  * Text Domain: gutenbee
  * Domain Path: /languages
  *
@@ -26,7 +26,7 @@
  */
 
 if ( ! defined( 'GUTENBEE_PLUGIN_VERSION' ) ) {
-	define( 'GUTENBEE_PLUGIN_VERSION', '2.20.1' );
+	define( 'GUTENBEE_PLUGIN_VERSION', '2.20.2' );
 }
 
 if ( ! defined( 'GUTENBEE_PLUGIN_DIR' ) ) {
@@ -563,22 +563,6 @@ function gutenbee_has_block_in_reusable( $block_name, $id = false ) {
 	}
 
 	return false;
-}
-
-// TODO think what to do here enabling JSON uploads
-add_filter( 'wp_check_filetype_and_ext', 'gutenbee_file_and_ext_json', 10, 4 );
-function gutenbee_file_and_ext_json( $types, $file, $filename, $mimes ) {
-	if ( false !== strpos( $filename, '.json' ) ) {
-		$types['ext']  = 'json';
-		$types['type'] = 'application/json';
-	}
-	return $types;
-}
-
-add_filter( 'upload_mimes', 'gutenbee_mime_types' );
-function gutenbee_mime_types( $mimes ) {
-	$mimes['json'] = 'application/json';
-	return $mimes;
 }
 
 add_filter( 'plugin_action_links_gutenbee/gutenbee.php', 'gutenbee_settings_link' );
